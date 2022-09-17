@@ -1,1 +1,56 @@
+/*
+Clases genericas
+Programador: María Quinilla
+utilizamos tres parametros para una clase generica
+ */
+package triple;
+
+/*
+ * @param <I>
+ * @param <P>
+ * @param <S>
+ */
+class Triple<I, P, S> {
+private final I i; /* Atributo que identifica el primer elemento de la
+tripleta */
+private final P p; /* Atributo que identifica el segundo elemento de
+la tripleta */
+private final S s; /* Atributo que identifica el tercer elemento de la 
+tripleta*/
+
+
+    public Triple(I valor1, P valor2, S valor3) {
+    i = valor1;
+    p = valor2;
+    s = valor3;
+    }
+
+    private Triple(String lacteo, String leche, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+@Override
+    public String toString() 
+    {
+         return String.format(i + " - "+ p + " - " + s);
+    } 
+
+    public static void main(String[] args) 
+    {
+        System.out.println("productos");
+       Triple<String,String, Integer> triple1 = new Triple<>
+        ("lacteo", "leche", 2);
+        System.out.println(triple1);
+        // Crea una tripleta conformada por tres String
+        Triple<String, String, Integer> triple2 = new Triple<> 
+        ("granos", "arroz", 5);
+        System.out.println(triple2);
+        // Crea una tripleta conformada por dos String y un Integer
+        Triple<String, String, Integer> triple3 = new Triple<> 
+        ("especias","paprika",3);
+        System.out.println(triple3);
+        }
+    }
+
+
 
